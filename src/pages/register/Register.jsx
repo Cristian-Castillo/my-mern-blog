@@ -18,7 +18,7 @@ export default function Register() {
         email,
         password,
       });
-      res.data && window.location.replace("https://blog-n-mern.herokuapp.com/api/auth/login");
+      res.data && window.location.replace("https://confident-yalow-88511d.netlify.app/login");
     } catch (err) {
       setError(true);
     }
@@ -53,7 +53,7 @@ export default function Register() {
         </button>
       </form>
       <button className="registerLoginButton">
-        <Link className="link" to="https://blog-n-mern.herokuapp.com/api/auth/login">
+        <Link className="link" to="/login">
           Login
         </Link>
       </button>

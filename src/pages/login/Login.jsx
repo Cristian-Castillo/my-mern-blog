@@ -46,7 +46,7 @@ export default function Login() {
         </button>
       </form>
       <button className="loginRegisterButton">
-        <Link className="link" to="https://blog-n-mern.herokuapp.com/api/auth/register">
+        <Link className="link" to="https://confident-yalow-88511d.netlify.app/register">
           Register
         </Link>
       </button>
