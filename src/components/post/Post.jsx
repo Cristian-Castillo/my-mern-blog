@@ -2,7 +2,7 @@ import "./post.css";
 import { Link } from "react-router-dom";
 
 export default function Post({ post }) {
-  const PF = "http://localhost:4000/images/";
+  const PF = "https://blog-n-mern.herokuapp.com/images/";
   // const PF = "https://blog-n-mern.herokuapp.com/images"
   return (
     <div className="post">
@@ -13,7 +13,7 @@ export default function Post({ post }) {
             <span className="postCat" >{c.name}</span>
           ))}
         </div>
-        <Link to={`/post/${post._id}`} className="link">
+        <Link to={`https://blog-n-mern.herokuapp.com/api/posts/${post._id}`} className="link">
           <span className="postTitle" >{post.title}</span>
         </Link>
         <hr />
