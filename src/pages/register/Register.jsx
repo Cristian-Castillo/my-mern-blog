@@ -21,7 +21,7 @@ export default function Register() {
         password,
       }).then(() => {
         console.log("Success login!")
-        res.data && history.push("/")
+        history.push("/login")
       }).catch(e => console.log(e))
       
     } catch (err) {
