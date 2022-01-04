@@ -27,8 +27,8 @@ export default function Write() {
       } catch (err) {}
     }
     try {
-      const res = await axios.post("/posts", newPost);
-      window.location.replace("/post/" + res.data._id);
+      const res = await axios.post("https://blog-n-mern.herokuapp.com/posts", newPost);
+      window.location.replace("https://blog-n-mern.herokuapp.com/post/" + res.data._id);
     } catch (err) {}
   };
   return (

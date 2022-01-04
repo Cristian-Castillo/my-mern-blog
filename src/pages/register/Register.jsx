@@ -20,7 +20,6 @@ export default function Register() {
         email,
         password,
       }).then(() => {
-        console.log("Success login!")
         history.push("/login")
       }).catch(e => console.log(e))
       
