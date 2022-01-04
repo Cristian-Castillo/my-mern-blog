@@ -3,6 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { Link } from "react-router-dom";
 import { Context } from "../../context/Context";
+import { useHistory } from "react-router-dom"
 import "./singlePost.css";
 
 export default function SinglePost() {
@@ -14,10 +15,11 @@ export default function SinglePost() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [updateMode, setUpdateMode] = useState(false);
+  const history = useHistory()
 
   useEffect(() => {
     const getPost = async () => {
-      const res = await axios.get("/posts/" + path);
+      const res = await axios.get("https://blog-n-mern.herokuapp.com/api/posts/" + path);
       setPost(res.data);
       setTitle(res.data.title);
       setDesc(res.data.desc);
@@ -27,16 +29,17 @@ export default function SinglePost() {
 
   const handleDelete = async () => {
     try {
-      await axios.delete(`/posts/${post._id}`, {
+      await axios.delete(`https://blog-n-mern.herokuapp.com/api/posts/${post._id}`, {
         data: { username: user.username },
       });
-      window.location.replace("/");
+      // window.location.replace("/");
+      history.push("/")
     } catch (err) {}
   };
 
   const handleUpdate = async () => {
     try {
-      await axios.put(`/posts/${post._id}`, {
+      await axios.put(`https://blog-n-mern.herokuapp.com/api/posts/${post._id}`, {
         username: user.username,
         title,
         desc,
