@@ -13,12 +13,12 @@ export default function Register() {
     e.preventDefault();
     setError(false);
     try {
-      const res = await axios.post("/auth/register", {
+      const res = await axios.post("https://blog-n-mern.herokuapp.com/auth/register", {
         username,
         email,
         password,
       });
-      res.data && window.location.replace("/login");
+      res.data && window.location.replace("https://blog-n-mern.herokuapp.com/login");
     } catch (err) {
       setError(true);
     }
@@ -53,7 +53,7 @@ export default function Register() {
         </button>
       </form>
       <button className="registerLoginButton">
-        <Link className="link" to="/login">
+        <Link className="link" to="https://blog-n-mern.herokuapp.com/login">
           Login
         </Link>
       </button>
